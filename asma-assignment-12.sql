@@ -93,7 +93,7 @@ insert into `order_pizza`(order_id, pizza_id, pizza_quantity)
 -- Third order:
 
 insert into `order`(`date&time`)
-	value('2014-10-9 9:47:00');
+	value('2014-10-9 10:47:00');
 select * from `order`;
 insert into `customer_order`(customer_id, order_id)
 	value(1,3);
@@ -123,6 +123,6 @@ join `customer_order` as co on c.customer_id = co.customer_id
 join `order` as o on co.order_id = o.order_id
 join `order_pizza` as op on o.order_id = op.order_id
 join `pizza` as p on op.pizza_id = p.pizza_id
-group by o.`date&time`;
+group by Date(`date&time`), c.customer_id;
 
 
