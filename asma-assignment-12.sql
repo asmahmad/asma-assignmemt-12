@@ -123,6 +123,6 @@ join `customer_order` as co on c.customer_id = co.customer_id
 join `order` as o on co.order_id = o.order_id
 join `order_pizza` as op on o.order_id = op.order_id
 join `pizza` as p on op.pizza_id = p.pizza_id
-group by Date(`date&time`), c.customer_id;
+group by c.customer_id;
 
 
